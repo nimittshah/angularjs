@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="employee">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+</head>
+<body>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<div ng-controller="EmployeeController as employee">
+		<div ng-repeat="employee in employee.employees">
+			<h1><strong>{{employee.name}}</strong></h1>
+			<h3>{{employee.company}}</h3>
+			<h3>{{employee.inc}}</h3>
+			<hr/>
+		</div>
+	</div>
+</body>
+</html>

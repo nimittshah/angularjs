@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css" />
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<style>
+		.contents{
+			height:510px;
+			overflow:auto;
+		}
+	</style>
+	<script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script data-require="angular.js@1.4.7" data-semver="1.4.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#navContainer>li").click(function(){
+				console.log("clicked");
+				if($(this).hasClass("active"))
+					return ;
+					
+				console.log("li");
+				$("#navContainer>li").each(function(){
+					$(this).removeClass("active");
+				});
+				
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container" class="container">
+		<div class="myData">
+			<div id="userContainer">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#userContainer" >Users</a></li>
+				</ul>
+				<div id="allUsers" class="contents"></div>
+			</div>
+			<div id="dataContainer">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#userContainer" >Posts</a></li>
+					<li><a data-toggle="tab" href="#userContainer" >Comments</a></li>
+					<li><a data-toggle="tab" href="#userContainer" >Albums</a></li>
+				</ul>
+				<div id="userData" class="contents"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
